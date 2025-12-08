@@ -18,14 +18,15 @@ class WeatherTool(BaseTool):
     @property
     def parameters(self) -> dict:
         return {
-            "type": "OBJECT",
+            "type": "object",
             "properties": {
                 "location": {
-                    "type": "STRING",
+                    "type": "string",
                     "description": "City name (e.g., 'London', 'New York')"
                 }
             },
-            "required": ["location"]
+            "required": ["location"],
+            "additionalProperties": False
         }
     
     def execute(self, location: str) -> dict:
@@ -61,3 +62,4 @@ class WeatherTool(BaseTool):
             }
         except Exception as e:
             return {"error": f"Weather API error: {str(e)}"}
+

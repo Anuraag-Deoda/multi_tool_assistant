@@ -15,14 +15,15 @@ class WebSearchTool(BaseTool):
     @property
     def parameters(self) -> dict:
         return {
-            "type": "OBJECT",
+            "type": "object",
             "properties": {
                 "query": {
-                    "type": "STRING",
+                    "type": "string",
                     "description": "The search query"
                 }
             },
-            "required": ["query"]
+            "required": ["query"],
+            "additionalProperties": False
         }
     
     def execute(self, query: str) -> dict:

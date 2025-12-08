@@ -18,23 +18,25 @@ class FileManagerTool(BaseTool):
     @property
     def parameters(self) -> dict:
         return {
-            "type": "OBJECT",
+            "type": "object",
             "properties": {
                 "operation": {
-                    "type": "STRING",
+                    "type": "string",
                     "enum": ["create", "read", "append"],
                     "description": "Operation to perform"
                 },
                 "filename": {
-                    "type": "STRING",
+                    "type": "string",
                     "description": "Name of the file"
                 },
                 "content": {
-                    "type": "STRING",
+                    "type": "string",
                     "description": "Content to write/append (not needed for read)"
                 }
             },
-            "required": ["operation", "filename"]
+            "required": ["operation", "filename"],
+            "additionalProperties": False
+
         }
     
     def execute(self, operation: str, filename: str, content: str = "") -> dict:

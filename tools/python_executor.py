@@ -16,14 +16,15 @@ class PythonExecutorTool(BaseTool):
     @property
     def parameters(self) -> dict:
         return {
-            "type": "OBJECT",
+            "type": "object",
             "properties": {
                 "code": {
-                    "type": "STRING",
+                    "type": "string",
                     "description": "Python code to execute"
                 }
             },
-            "required": ["code"]
+            "required": ["code"],
+            "additionalProperties": False
         }
     
     def execute(self, code: str) -> dict:

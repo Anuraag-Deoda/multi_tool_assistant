@@ -34,9 +34,14 @@ class BaseTool(ABC):
             "function": {
                 "name": self.name,
                 "description": self.description,
-                "parameters": self.parameters
+                "parameters": self.openai_parameters
             }
         }
+    
+    @property
+    def openai_parameters(self) -> Dict[str, Any]:
+        """Tool parameters schema for OpenAI (default: same as Gemini)"""
+        return self.parameters
     
     def to_gemini_format(self) -> Dict[str, Any]:
         """Convert tool to Gemini function format"""
