@@ -1,11 +1,12 @@
 from tools.base_tool import BaseTool
 from typing import Dict
+import os
 
 class FileManagerTool(BaseTool):
     """File management tool (create, read, append)"""
     
     def __init__(self):
-        self.files = {}  # In-memory storage
+        pass
     
     @property
     def name(self) -> str:
@@ -43,19 +44,29 @@ class FileManagerTool(BaseTool):
         """Execute file operation"""
         print(f"📄 File operation: {operation} on {filename}")
         
-        if operation == "create":
-            self.files[filename] = content
-            return {"success": True, "message": f"Created '{filename}'"}
-        
-        elif operation == "read":
-            if filename in self.files:
-                return {"success": True, "content": self.files[filename]}
-            return {"success": False, "error": f"File '{filename}' not found"}
-        
-        elif operation == "append":
-            if filename in self.files:
-                self.files[filename] += "\n" + content
-                return {"success": True, "message": f"Appended to '{filename}'"}
-            return {"success": False, "error": f"File '{filename}' not found"}
-        
-        return {"success": False, "error": "Invalid operation"}
+        try:
+            if operation == "create":
+                # Ensure directory exists
+                os.makedirs(os.path.dirname(os.path.abspath(filename)), exist_ok=True)
+                
+                with open(filename, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                return {"success": True, "message": f"Created '{filename}'"}
+            
+            elif operation == "read":
+                if os.path.exists(filename):
+                    with open(filename, 'r', encoding='utf-8') as f:
+                        return {"success": True, "content": f.read()}
+                return {"success": False, "error": f"File '{filename}' not found"}
+            
+            elif operation == "append":
+                if os.path.exists(filename):
+                    with open(filename, 'a', encoding='utf-8') as f:
+                        f.write("\n" + content)
+                    return {"success": True, "message": f"Appended to '{filename}'"}
+                return {"success": False, "error": f"File '{filename}' not found"}
+            
+            return {"success": False, "error": "Invalid operation"}
+            
+        except Exception as e:
+            return {"success": False, "error": str(e)}
