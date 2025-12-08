@@ -48,5 +48,34 @@ class BaseTool(ABC):
         return {
             "name": self.name,
             "description": self.description,
-            "parameters": self.parameters
+            "parameters": self._convert_to_gemini_schema(self.parameters)
         }
+
+    def _convert_to_gemini_schema(self, schema: Dict[str, Any]) -> Dict[str, Any]:
+        """Recursively convert JSON schema types to uppercase for Gemini"""
+        if not isinstance(schema, dict):
+            return schema
+            
+        # Create a copy to avoid modifying original
+        new_schema = schema.copy()
+        
+        # Handle 'type' field - convert to uppercase
+        if "type" in new_schema and isinstance(new_schema["type"], str):
+            new_schema["type"] = new_schema["type"].upper()
+            
+        # Remove additionalProperties as it's not supported in Gemini Schema
+        if "additionalProperties" in new_schema:
+            del new_schema["additionalProperties"]
+            
+        # Recurse into properties
+        if "properties" in new_schema and isinstance(new_schema["properties"], dict):
+            new_schema["properties"] = {
+                k: self._convert_to_gemini_schema(v)
+                for k, v in new_schema["properties"].items()
+            }
+            
+        # Recurse into items (for arrays)
+        if "items" in new_schema and isinstance(new_schema["items"], dict):
+            new_schema["items"] = self._convert_to_gemini_schema(new_schema["items"])
+            
+        return new_schema
