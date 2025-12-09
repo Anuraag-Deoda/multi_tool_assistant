@@ -1,0 +1,132 @@
+{
+  "memories": {
+    "41d5a53ba432": {
+      "id": "41d5a53ba432",
+      "content": "User name: anuraag",
+      "memory_type": "user_info",
+      "category": "user_profile",
+      "importance": 0.8,
+      "created_at": "2025-12-09T10:40:55.708638",
+      "last_accessed": "2025-12-09T10:43:30.565901",
+      "access_count": 2,
+      "metadata": {}
+    },
+    "9851a5ff4003": {
+      "id": "9851a5ff4003",
+      "content": "User prefers answer_style: personalized",
+      "memory_type": "preference",
+      "category": "preferences",
+      "importance": 0.7,
+      "created_at": "2025-12-09T10:40:57.737899",
+      "last_accessed": "2025-12-09T10:44:29.616633",
+      "access_count": 2,
+      "metadata": {}
+    },
+    "1d7481fea4ac": {
+      "id": "1d7481fea4ac",
+      "content": "My name is anuraag i prefer that whenever you answer my queries you start with my name addressing me 1 to 1",
+      "memory_type": "user_info",
+      "category": "from_conversation",
+      "importance": 0.7,
+      "created_at": "2025-12-09T10:41:01.527001",
+      "last_accessed": "2025-12-09T10:45:35.428904",
+      "access_count": 4,
+      "metadata": {}
+    },
+    "c48b49c56a67": {
+      "id": "c48b49c56a67",
+      "content": "User prefers preferred_programming_language: Python",
+      "memory_type": "preference",
+      "category": "preferences",
+      "importance": 0.7,
+      "created_at": "2025-12-09T10:41:40.772417",
+      "last_accessed": "2025-12-09T10:45:35.428911",
+      "access_count": 3,
+      "metadata": {}
+    },
+    "7f3b8ad31580": {
+      "id": "7f3b8ad31580",
+      "content": "User prefers answer_style: personalized",
+      "memory_type": "preference",
+      "category": "preferences",
+      "importance": 0.7,
+      "created_at": "2025-12-09T10:41:42.184231",
+      "last_accessed": "2025-12-09T10:45:35.428915",
+      "access_count": 3,
+      "metadata": {}
+    },
+    "d206ad3b0cce": {
+      "id": "d206ad3b0cce",
+      "content": "also i prefer python over javascript and ya i prefer raw opinions when im wrong",
+      "memory_type": "user_info",
+      "category": "from_conversation",
+      "importance": 0.7,
+      "created_at": "2025-12-09T10:41:44.132226",
+      "last_accessed": "2025-12-09T10:45:35.428899",
+      "access_count": 3,
+      "metadata": {}
+    },
+    "1b46f06d6ab6": {
+      "id": "1b46f06d6ab6",
+      "content": "but consir this scenario i have a litre of diesel in a bucket/mug if i add a burning stick inside that mug the fire will stop as the oxygen inside mug of diesel is less right ?",
+      "memory_type": "user_info",
+      "category": "from_conversation",
+      "importance": 0.7,
+      "created_at": "2025-12-09T10:44:37.405803",
+      "last_accessed": "2025-12-09T10:45:35.428880",
+      "access_count": 1,
+      "metadata": {}
+    },
+    "b982a26851db": {
+      "id": "b982a26851db",
+      "content": "User tone: light, friendly, and funny",
+      "memory_type": "user_info",
+      "category": "user_profile",
+      "importance": 0.8,
+      "created_at": "2025-12-09T10:45:38.015529",
+      "last_accessed": "2025-12-09T10:45:38.015529",
+      "access_count": 0,
+      "metadata": {}
+    },
+    "7944c12bdf82": {
+      "id": "7944c12bdf82",
+      "content": "User conversation_style: light tone, friendly, and mostly funny",
+      "memory_type": "user_info",
+      "category": "user_profile",
+      "importance": 0.8,
+      "created_at": "2025-12-09T10:45:38.036684",
+      "last_accessed": "2025-12-09T10:45:38.036684",
+      "access_count": 0,
+      "metadata": {}
+    },
+    "555bf7506757": {
+      "id": "555bf7506757",
+      "content": "alright another thing man i like my conversation in light tone friendly and mostly funny manner",
+      "memory_type": "user_info",
+      "category": "from_conversation",
+      "importance": 0.7,
+      "created_at": "2025-12-09T10:45:40.469913",
+      "last_accessed": "2025-12-09T10:45:40.469913",
+      "access_count": 0,
+      "metadata": {}
+    }
+  },
+  "categories": {
+    "user_profile": [
+      "41d5a53ba432",
+      "b982a26851db",
+      "7944c12bdf82"
+    ],
+    "preferences": [
+      "9851a5ff4003",
+      "c48b49c56a67",
+      "7f3b8ad31580"
+    ],
+    "from_conversation": [
+      "1d7481fea4ac",
+      "d206ad3b0cce",
+      "1b46f06d6ab6",
+      "555bf7506757"
+    ]
+  }
+}
