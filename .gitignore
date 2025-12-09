@@ -2,3 +2,4 @@
 *.pyc
 /venv
 /chroma_db
+/conversations_openai
